@@ -11,6 +11,12 @@ This package contains common DTOs used for communication between the iOS client 
 - Swift 6.2+
 - iOS 13.0+ / macOS 10.15+
 
+## Features
+
+- **Swift 6 Concurrency Support**: All DTOs conform to `Sendable` for safe usage across concurrency boundaries
+- **Server-Independent**: No backend framework dependencies (Vapor, Kitura, etc.)
+- **Codable**: Native JSON encoding/decoding support
+
 ## Installation
 
 ### Swift Package Manager

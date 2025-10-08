@@ -1,10 +1,10 @@
-# HabitTrackerAppSharedDTO
+# GrowBitSharedDTO
 
-A Swift Package Manager library providing shared Data Transfer Objects (DTOs) for the Habit Tracker application.
+A Swift Package Manager library providing shared Data Transfer Objects (DTOs) for the GrowBit application.
 
 ## Overview
 
-This package contains common DTOs used for communication between the iOS client and backend server components of the Habit Tracker app.
+This package contains common DTOs used for communication between the iOS client and backend server components of the GrowBit app.
 
 ## Requirements
 
@@ -25,13 +25,13 @@ Add this package to your `Package.swift` dependencies:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/dmakarau/HabitTrackerAppSharedDTO.git", from: "1.0.0")
+    .package(url: "https://github.com/dmakarau/GrowBitSharedDTO.git", from: "1.0.0")
 ]
 ```
 
 Or in Xcode:
 1. File → Add Package Dependencies
-2. Enter the repository URL: `https://github.com/dmakarau/HabitTrackerAppSharedDTO.git`
+2. Enter the repository URL: `https://github.com/dmakarau/GrowBitSharedDTO.git`
 3. Select the version rule and add to your target
 
 ## Usage
@@ -39,7 +39,7 @@ Or in Xcode:
 Import the package in your Swift files:
 
 ```swift
-import HabitTrackerAppSharedDTO
+import GrowBitSharedDTO
 ```
 
 ### Available DTOs

@@ -1,6 +1,6 @@
 //
 //  RegisterResponseDTO.swift
-//  HabitTrackerAppSharedDTO
+//  GrowBitSharedDTO
 //
 //  Created by Denis Makarau on 03.10.25.
 //

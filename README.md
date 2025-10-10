@@ -44,7 +44,9 @@ import GrowBitSharedDTO
 
 ### Available DTOs
 
-#### RegisterResponseDTO
+#### Authentication DTOs
+
+##### RegisterResponseDTO
 Response object for user registration requests.
 
 ```swift
@@ -58,7 +60,7 @@ let response = RegisterResponseDTO(
 - `error: Bool` - Indicates if an error occurred
 - `reason: String?` - Optional error description
 
-#### LoginResponseDTO
+##### LoginResponseDTO
 Response object for user login requests.
 
 ```swift
@@ -75,6 +77,108 @@ let response = LoginResponseDTO(
 - `reason: String?` - Optional error description
 - `token: String?` - JWT authentication token (if login successful)
 - `userId: String?` - User identifier (if login successful)
+
+#### Category DTOs
+
+##### CategoryRequestDTO
+Request object for creating or updating a habit category.
+
+```swift
+let request = CategoryRequestDTO(
+    name: "Health",
+    colorCode: "#FF5733"
+)
+```
+
+**Properties:**
+- `name: String` - Category name
+- `colorCode: String` - Hex color code for the category
+
+##### CategoryResponseDTO
+Response object containing category data.
+
+```swift
+let response = CategoryResponseDTO(
+    id: UUID(),
+    name: "Health",
+    colorCode: "#FF5733"
+)
+```
+
+**Properties:**
+- `id: UUID` - Unique category identifier
+- `name: String` - Category name
+- `colorCode: String` - Hex color code for the category
+
+#### Item (Habit) DTOs
+
+##### ItemRequestDTO
+Request object for creating or updating a habit item.
+
+```swift
+let request = ItemRequestDTO(
+    title: "Morning Exercise",
+    description: "30 minutes of cardio",
+    startDate: Date(),
+    frequency: .daily,
+    goalDays: 30,
+    categoryId: UUID()
+)
+```
+
+**Properties:**
+- `title: String` - Habit title
+- `description: String?` - Optional habit description
+- `startDate: Date` - When the habit tracking begins
+- `frequency: FrequencyDTO` - How often the habit should be performed
+- `goalDays: Int` - Target number of days to complete
+- `categoryId: UUID` - Associated category identifier
+
+##### ItemResponseDTO
+Response object containing habit item data with tracking information.
+
+```swift
+let response = ItemResponseDTO(
+    id: UUID(),
+    title: "Morning Exercise",
+    description: "30 minutes of cardio",
+    startDate: Date(),
+    frequency: .daily,
+    goalDays: 30,
+    completedDays: 5,
+    isCompleted: false,
+    categoryId: UUID()
+)
+```
+
+**Properties:**
+- `id: UUID` - Unique item identifier
+- `title: String` - Habit title
+- `description: String?` - Optional habit description
+- `startDate: Date` - When the habit tracking begins
+- `frequency: FrequencyDTO` - How often the habit should be performed
+- `goalDays: Int` - Target number of days to complete
+- `completedDays: Int` - Number of days completed so far
+- `isCompleted: Bool` - Whether the habit goal has been achieved
+- `categoryId: UUID` - Associated category identifier
+
+#### Supporting Types
+
+##### FrequencyDTO
+Enum defining habit frequency options.
+
+```swift
+public enum FrequencyDTO: String, Codable, CaseIterable, Sendable {
+    case daily
+    case weekly
+    case monthly
+}
+```
+
+**Cases:**
+- `daily` - Habit should be performed every day
+- `weekly` - Habit should be performed every week
+- `monthly` - Habit should be performed every month
 
 ## Development
 
